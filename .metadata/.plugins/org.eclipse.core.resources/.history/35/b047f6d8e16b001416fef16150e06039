@@ -27,7 +27,6 @@
         android:text="100" 
         android:textSize="150dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         />
 
     <Button
