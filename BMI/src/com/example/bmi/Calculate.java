@@ -1,0 +1,9 @@
+package com.example.bmi;
+
+public class Calculate {
+	public float convert(int weight, int length) {
+		int length2 = length * length;
+		int bmi = length2 / weight;
+		return bmi;
+	}
+}

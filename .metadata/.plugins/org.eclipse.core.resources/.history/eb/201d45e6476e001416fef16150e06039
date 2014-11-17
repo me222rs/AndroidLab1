@@ -1,0 +1,9 @@
+package com.example.bmi;
+
+public class Calculate {
+	public float convert(int weight, int lengthCM) {
+		float lengthM = lengthCM / 100.0f; 
+		float bmi = Math.round((weight / (lengthM * lengthM)) * 10) / 10.0f;		
+		return bmi;
+	}
+}
