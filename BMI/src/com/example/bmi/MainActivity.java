@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,11 +28,22 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View view) {
 				if(view == calculateButton){
+					Calculate calc = new Calculate();
+					EditText inWeigth = (EditText) findViewById(R.id.weight);
+					EditText inHeight = (EditText) findViewById(R.id.length);
 					
+					int weigth = Integer.parseInt(inWeigth.getText().toString());
+					int height = Integer.parseInt(inHeight.getText().toString());
+					float bmi = calc.convert(weigth, height);
+					
+					TextView result = (TextView) findViewById(R.id.result);
+					result.setText(Float.toString(bmi));
+					//String s = Float.toString(bmi);
+					//Toast.makeText(MainActivity.this, bmi,	Toast.LENGTH_SHORT).show();
 				}
 			
 				
-				Toast.makeText(MainActivity.this, "test",	Toast.LENGTH_SHORT).show();
+				
 			}
 
 		});
