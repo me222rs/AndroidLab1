@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	Button calculateButton;
+	Button resetButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +24,31 @@ public class MainActivity extends Activity {
         
         
         calculateButton = (Button) findViewById(R.id.calculateButton);
+        resetButton = (Button) findViewById(R.id.resetButton);
+        
+        resetButton.setOnClickListener(new OnClickListener() {
+        	public void onClick(View view) {
+		if(view == resetButton){
+			EditText inWeigth = (EditText) findViewById(R.id.weight);
+			inWeigth.setText("");
+			EditText inHeight = (EditText) findViewById(R.id.length);
+			inHeight.setText("");
+			
+			TextView result = (TextView) findViewById(R.id.result);
+			result.setText(Float.toString(0));
+			
+			TextView message = (TextView) findViewById(R.id.message);
+			message.setText("");
+			
+		}
+        	}
+        }); 
         calculateButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View view) {
+				String funnyMessage = "";
+				
 				if(view == calculateButton){
 					Calculate calc = new Calculate();
 					EditText inWeigth = (EditText) findViewById(R.id.weight);
@@ -36,10 +58,25 @@ public class MainActivity extends Activity {
 					int height = Integer.parseInt(inHeight.getText().toString());
 					float bmi = calc.convert(weigth, height);
 					
+					if(bmi > 30){
+						funnyMessage = "No more cake for you!";
+					}
+					if(bmi <= 18){
+						funnyMessage = "More cake for you!";
+					}
+					if(bmi > 18 && bmi <= 25){
+						funnyMessage = "You're normal!";
+					}
+					if(bmi > 25 && bmi < 30){
+						funnyMessage = "You're getting fat!";
+					}
+					
 					TextView result = (TextView) findViewById(R.id.result);
 					result.setText(Float.toString(bmi));
-					//String s = Float.toString(bmi);
-					//Toast.makeText(MainActivity.this, bmi,	Toast.LENGTH_SHORT).show();
+					
+					TextView message = (TextView) findViewById(R.id.message);
+					message.setText(funnyMessage);
+					
 				}
 			
 				

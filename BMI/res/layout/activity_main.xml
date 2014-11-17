@@ -1,3 +1,4 @@
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,34 +10,35 @@
     tools:context="com.example.bmi.MainActivity" >
 
     <TextView
+        android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate your BMI" />
     
         <TextView
+        android:layout_below="@id/header"
         android:id="@+id/lengthLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Length:" 
-        android:labelFor="@+id/length"
-        android:layout_marginTop="100dp"/>
+        android:labelFor="@+id/length"/>
+        
         
         
         <EditText android:id="@+id/length"
         android:layout_below="@id/lengthLabel" 
         android:inputType="number"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
- />
+		android:layout_height="wrap_content" />
         
         
         <TextView
+        android:layout_below="@id/length" 
         android:id="@+id/weightLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Weight:" 
-        android:labelFor="@+id/weight"
-        android:layout_marginTop="200dp"/>
+        android:labelFor="@+id/weight"/>
                 
         <EditText android:id="@+id/weight"
         android:layout_below="@id/weightLabel"      
@@ -46,19 +48,35 @@
     
     
         <Button android:id="@+id/calculateButton"
+        android:layout_below="@id/weight"     
         android:layout_centerHorizontal="true"
     	android:layout_height="50dp"
-     	android:layout_width="250dp" 
-     	android:layout_marginTop="300dp"
+    	android:layout_width="match_parent"
         android:layout_gravity="center"
         android:text="Calculate BMI" />
         
         
-            <TextView android:id="@+id/result"
+        <TextView android:id="@+id/result"
+        android:layout_below="@id/calculateButton" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="50sp"
+        android:textSize="30sp"
         android:text="0" />
+        
+        <TextView android:id="@+id/message"
+        android:layout_below="@id/result" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:gravity="center"
+        android:textSize="20sp"/>
+        
+        <Button android:id="@+id/resetButton"
+        android:layout_below="@id/message"     
+    	android:layout_height="50dp"
+    	android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:text="Reset" />
 
 </RelativeLayout>

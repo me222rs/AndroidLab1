@@ -22,7 +22,6 @@
         />
     
         <TextView
-        android:layout_centerHorizontal="true"
        	android:id="@+id/randomText" 
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -35,9 +34,8 @@
     <Button
         android:id="@+id/randomizeButton" 
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-    	android:layout_height="50dp"
-     	android:layout_width="250dp"    
+    	android:layout_height="wrap_content"
+     	android:layout_width="match_parent"    
     	android:text="New random"
     	android:layout_gravity="center"
     	
