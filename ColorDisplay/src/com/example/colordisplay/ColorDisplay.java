@@ -11,17 +11,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 public class ColorDisplay extends Activity {
-	Button displayColor; 
+	Button displayColor;
+	String errorMessage = ""; 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_display);
-       
+
         
        displayColor = (Button) findViewById(R.id.displayColor);
         
@@ -36,10 +36,20 @@ public class ColorDisplay extends Activity {
 			int blue = Integer.parseInt(blueInput.getText().toString());
 			int green = Integer.parseInt(greenInput.getText().toString());
 			
-			//String hex = String.format("#%02x%02x%02x", red, blue, green);
-			
-			RelativeLayout bgElement = (RelativeLayout) findViewById(R.id.background);
-			bgElement.setBackgroundColor(Color.rgb(red, green, blue));
+			if(red > 255 || blue > 255 || green > 255){
+				errorMessage = "The primary colors can't have a value higher than 255";
+				TextView error = (TextView) findViewById(R.id.errorMessage);
+				error.setText(errorMessage);
+			}
+
+			else{
+			//Clear the error message
+		    TextView clearError = (TextView) findViewById(R.id.errorMessage);
+		    clearError.setText("");
+		    //Draw the color
+			TextView color = (TextView) findViewById(R.id.background);
+			color.setBackgroundColor(Color.rgb(red, green, blue));
+			}
 		}
         	}
         }); 

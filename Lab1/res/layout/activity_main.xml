@@ -16,9 +16,8 @@
        	
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Randomize a number!" 
-        android:textSize="30dp"
-        android:layout_centerHorizontal="true"
+        android:text="@string/header" 
+        android:textSize="30sp"
         />
     
         <TextView
@@ -26,17 +25,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="100" 
+        android:text="@string/max" 
         android:textSize="170sp"
         android:gravity="center"
         />
 
     <Button
         android:id="@+id/randomizeButton" 
-        android:layout_centerHorizontal="true"
     	android:layout_height="wrap_content"
      	android:layout_width="match_parent"    
-    	android:text="New random"
+    	android:text="@string/randomButton"
     	android:layout_gravity="center"
     	
     />
