@@ -31,13 +31,15 @@ public class ColorDisplay extends Activity {
 			EditText redInput = (EditText) findViewById(R.id.red);
 			EditText blueInput = (EditText) findViewById(R.id.blue);
 			EditText greenInput = (EditText) findViewById(R.id.green);
+
 			
-			int red = Integer.parseInt(redInput.getText().toString());
-			int blue = Integer.parseInt(blueInput.getText().toString());
-			int green = Integer.parseInt(greenInput.getText().toString());
+			Integer red = Integer.parseInt(redInput.getText().toString());
+			Integer blue = Integer.parseInt(blueInput.getText().toString());
+			Integer green = Integer.parseInt(greenInput.getText().toString());
+			
 			
 			if(red > 255 || blue > 255 || green > 255){
-				errorMessage = "The primary colors can't have a value higher than 255";
+				errorMessage = "The primary colors must have a value between 1-255";
 				TextView error = (TextView) findViewById(R.id.errorMessage);
 				error.setText(errorMessage);
 			}
