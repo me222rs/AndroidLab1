@@ -35,7 +35,6 @@ public class MyCounties extends Activity {
         	
         }
         else{
-        	DataHandler.SetArrayList(arrayList);
         	list.setAdapter(adapter);
         }
     }

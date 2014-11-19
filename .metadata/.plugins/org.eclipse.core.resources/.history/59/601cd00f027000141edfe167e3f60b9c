@@ -31,7 +31,7 @@ public class AddCountryActivity extends Activity {
         btn = (Button) findViewById(R.id.add);
         //list = (ListView) findViewById(R.id.listView);
         arrayList = DataHandler.GetArrayList();
-        if(arrayList == null){
+        if(arrayList = null){
         	arrayList = new ArrayList<String>();
         }
         

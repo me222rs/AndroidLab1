@@ -31,10 +31,8 @@ public class AddCountryActivity extends Activity {
         btn = (Button) findViewById(R.id.add);
         //list = (ListView) findViewById(R.id.listView);
         arrayList = DataHandler.GetArrayList();
-        if(arrayList == null){
-        	arrayList = new ArrayList<String>();
-        }
-        
+        if(arrayList = null)
+        arrayList = new ArrayList<String>();
         
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList);
         
