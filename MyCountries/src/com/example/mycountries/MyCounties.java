@@ -16,14 +16,27 @@ import android.widget.ListView;
 
 
 public class MyCounties extends Activity {
-
+	private ListView list;
+	private static ArrayAdapter<String> adapter;
+	private static ArrayList<String> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_counties);
+       
+        list = (ListView) findViewById(R.id.listView2);
+        arrayList = DataHandler.GetArrayList();
+        //arrayList.add("test1");
+        System.out.println(arrayList);
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList);
         
-        
-        
+        // Here, you set the data in your ListView
+        if(arrayList == null){
+        	
+        }
+        else{
+        	list.setAdapter(adapter);
+        }
     }
 
     @Override

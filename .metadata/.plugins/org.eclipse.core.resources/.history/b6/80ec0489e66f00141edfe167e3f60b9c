@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.colordisplay.ColorDisplay" >
+
+
+
+
+        
+    	<LinearLayout
+        android:gravity="center_horizontal"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" >
+			
+        <EditText android:id="@+id/red"
+        
+        android:inputType="number"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:hint="@string/red" 
+		android:layout_gravity="left"
+		/>
+        
+
+                
+        <EditText android:id="@+id/blue"
+        android:inputType="number"
+		android:layout_width = "wrap_content"
+		android:layout_height="wrap_content" 
+		android:hint="@string/blue"
+		android:layout_gravity="left"/>
+        
+        <EditText android:id="@+id/green"
+        android:inputType="number"
+        android:layout_gravity="left"
+		android:layout_width = "wrap_content"
+		android:layout_height="wrap_content" 
+		android:hint="@string/green"/>
+        
+        <Button android:id="@+id/displayColor"   
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+        android:layout_gravity="left"
+       	android:text="@string/displayColor" />
+		</LinearLayout>
+		
+		<TextView
+    	android:id="@+id/errorMessage"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text=""/>
+		
+		<TextView 
+        android:id="@+id/background"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:background="#000"
+        android:layout_height="wrap_content"
+        android:gravity="center"/>
+
+                        
+
+</LinearLayout>

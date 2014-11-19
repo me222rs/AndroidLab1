@@ -1,0 +1,16 @@
+package com.example.mycountries;
+
+import java.util.ArrayList;
+
+public class DataHandler {
+	private static ArrayList<String> arrayList;
+	
+	
+	public static ArrayList<String> GetArrayList(){
+		return arrayList;
+	}
+	
+	public static ArrayList<String> SetArrayList(){
+		
+	}
+}
