@@ -12,10 +12,11 @@
 
 
     
-    	    <EditText android:id="@+id/addCountry" 
+    	<EditText android:id="@+id/addCountry" 
+    	android:inputType="text"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:hint="Country"
+		android:hint="@string/country"
 		/>
 	    
 	    <EditText android:id="@+id/addYear" 
@@ -23,13 +24,31 @@
         android:inputType="number"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:hint="Year"
+		android:hint="@string/year"
 		/>
+	    
+	    <TextView
+		android:id="@+id/CerrorMessage" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text=""    
+		/>
+	    
+	    <TextView
+		android:id="@+id/YerrorMessage" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text=""    
+		/>
+	    
 	    
 	    <Button 
         android:id="@+id/add"   
     	android:layout_width="wrap_content"
     	android:layout_height="wrap_content"
         android:layout_gravity="center"
-       	android:text="@string/add" />
+       	android:text="@string/add" 
+       	android:onClick="getActivity"/>
+	    
+	    
 </LinearLayout>

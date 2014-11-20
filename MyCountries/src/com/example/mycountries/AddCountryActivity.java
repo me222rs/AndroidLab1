@@ -1,6 +1,5 @@
 package com.example.mycountries;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -12,24 +11,27 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.TextView;
 
 public class AddCountryActivity extends Activity {
 
 	
 	private EditText editTxt;
+	private EditText editTxt2;
 	private Button btn;
-	private ListView list;
+	private TextView error1;
 	private static ArrayAdapter<String> adapter;
 	private static ArrayList<String> arrayList;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_country);
-		
+		error1 = (TextView) findViewById(R.id.CerrorMessage);
+		//error2 = (TextView) findViewById(R.id.YerrorMessage);
         editTxt = (EditText) findViewById(R.id.addCountry);
+        editTxt2 = (EditText) findViewById(R.id.addYear);
         btn = (Button) findViewById(R.id.add);
-        //list = (ListView) findViewById(R.id.listView);
+        
         arrayList = DataHandler.GetArrayList();
         if(arrayList == null){
         	arrayList = new ArrayList<String>();
@@ -37,19 +39,35 @@ public class AddCountryActivity extends Activity {
         
         
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList);
-        
-        // Here, you set the data in your ListView
-        //list.setAdapter(adapter);
+
         
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            	//Validation
+            	String country = editTxt.getText().toString();
+            	String year = editTxt2.getText().toString();
+            	
 
+        		if(country.length() == 0 || country == null || country.matches(".*\\d.*") || year.length() == 0 || year == null || !year.matches("[0-9]+")){
+            		error1.setText("Country can not be empty or contain numbers and year must be a number");
+            		
+            	}
+            	//If it validates it adds country to the list
+            	else{
+            		String value = year + " " + country;
+            		
+                    arrayList.add(value);
+                    DataHandler.SetArrayList(arrayList);
+                    
+                    adapter.notifyDataSetChanged();
+                    Intent i = new Intent(getApplicationContext(),MyCounties.class);
+                    startActivity(i);
+                    //Ends the activity after button is pressed to prevent too many of the same activity running at once
+                    AddCountryActivity.this.finish();
+            	}
                 
-                arrayList.add(editTxt.getText().toString());
-                DataHandler.SetArrayList(arrayList);
-                
-                adapter.notifyDataSetChanged();
+
                 
             }
         });
@@ -75,6 +93,8 @@ public class AddCountryActivity extends Activity {
         if (id == R.id.action_add) {
             Intent productIntent = new Intent(this,MyCounties.class);
             startActivity(productIntent);
+            //If an activity is not closed it will still run and i will start new ones each time we click the add button
+            this.finish();
             return true;
         }
 		return super.onOptionsItemSelected(item);

@@ -11,11 +11,11 @@
 
 
 
-				<ListView 
-		    android:id="@+id/listView2"
-              android:layout_height="wrap_content"
-              android:layout_width="wrap_content"
-              android:background="#000"
+		<ListView 
+		android:id="@+id/listView2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="#450"
         />
 
     

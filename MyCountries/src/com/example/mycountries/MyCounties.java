@@ -3,15 +3,11 @@ package com.example.mycountries;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 
@@ -21,20 +17,23 @@ public class MyCounties extends Activity {
 	private static ArrayList<String> arrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_counties);
-       
+
+        //Source: http://stackoverflow.com/questions/4540754/dynamically-add-elements-to-a-listview-android
         list = (ListView) findViewById(R.id.listView2);
+        //Gets the array with countries
         arrayList = DataHandler.GetArrayList();
-        //arrayList.add("test1");
-        System.out.println(arrayList);
+
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_item, arrayList);
         
-        // Here, you set the data in your ListView
+        
         if(arrayList == null){
         	
         }
         else{
+        	//Saves the array in DataHandler and shows the array in a listview
         	DataHandler.SetArrayList(arrayList);
         	list.setAdapter(adapter);
         }
@@ -56,9 +55,11 @@ public class MyCounties extends Activity {
         if (id == R.id.action_settings) {
             return true;
         }
+        //A new activity starts when the Add button is pressed in the action bar
         if (id == R.id.action_add) {
             Intent productIntent = new Intent(this,AddCountryActivity.class);
             startActivity(productIntent);
+            this.finish();
             return true;
         }
         return super.onOptionsItemSelected(item);

@@ -12,15 +12,22 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class ColorDisplay extends Activity {
 	Button displayColor;
-	String errorMessage = ""; 
+	String errorMessage = "";
+	
+	Integer red;
+	Integer blue;
+	Integer green;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_display);
+        
 
         
        displayColor = (Button) findViewById(R.id.displayColor);
@@ -33,22 +40,16 @@ public class ColorDisplay extends Activity {
 			EditText greenInput = (EditText) findViewById(R.id.green);
 
 			
-			Integer red = Integer.parseInt(redInput.getText().toString());
-			Integer blue = Integer.parseInt(blueInput.getText().toString());
-			Integer green = Integer.parseInt(greenInput.getText().toString());
+			red = Integer.parseInt(redInput.getText().toString());
+			blue = Integer.parseInt(blueInput.getText().toString());
+			green = Integer.parseInt(greenInput.getText().toString());
 			
 			
 			if(red > 255 || blue > 255 || green > 255){
-				errorMessage = "The primary colors must have a value between 1-255";
-				TextView error = (TextView) findViewById(R.id.errorMessage);
-				error.setText(errorMessage);
+				Toast.makeText(ColorDisplay.this, "The primary colors must have a value between 1-255",	Toast.LENGTH_SHORT).show();
 			}
 
 			else{
-			//Clear the error message
-		    TextView clearError = (TextView) findViewById(R.id.errorMessage);
-		    clearError.setText("");
-		    //Draw the color
 			TextView color = (TextView) findViewById(R.id.background);
 			color.setBackgroundColor(Color.rgb(red, green, blue));
 			}
@@ -77,5 +78,10 @@ public class ColorDisplay extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+    	super.onSaveInstanceState(savedInstanceState);
     }
 }

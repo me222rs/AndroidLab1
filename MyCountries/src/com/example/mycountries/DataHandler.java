@@ -5,19 +5,16 @@ import java.util.ArrayList;
 public class DataHandler {
 	private static ArrayList<String> arrayList;
 	
-	
+	//Gets the array list
 	public static ArrayList<String> GetArrayList(){
-		//if(arrayList == null){
-			//arrayList.add("test");
-			//return arrayList;
-		//}
 		return arrayList;
 	}
-	
+	//Sets the array list
 	public static void SetArrayList(ArrayList<String> array){
-		//System.out.println(array);
 
 			arrayList = array;
 		
 	}
+	
+	
 }

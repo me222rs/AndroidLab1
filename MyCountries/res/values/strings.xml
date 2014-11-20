@@ -7,5 +7,7 @@
     <string name="add">Add</string>
     <string name="addNewCountry">Add</string>
     <string name="title_activity_add_country">AddCountryActivity</string>
+    <string name="country">Country</string>
+    <string name="year">year</string>
 
 </resources>
