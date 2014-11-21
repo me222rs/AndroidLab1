@@ -18,7 +18,8 @@ import android.widget.Toast;
 public class ColorDisplay extends Activity {
 	Button displayColor;
 	String errorMessage = "";
-	
+	int color;
+	TextView background;
 	Integer red;
 	Integer blue;
 	Integer green;
@@ -29,7 +30,7 @@ public class ColorDisplay extends Activity {
         setContentView(R.layout.activity_color_display);
         
 
-        
+       background = (TextView) findViewById(R.id.background);
        displayColor = (Button) findViewById(R.id.displayColor);
         
         displayColor.setOnClickListener(new OnClickListener() {
@@ -38,20 +39,19 @@ public class ColorDisplay extends Activity {
 			EditText redInput = (EditText) findViewById(R.id.red);
 			EditText blueInput = (EditText) findViewById(R.id.blue);
 			EditText greenInput = (EditText) findViewById(R.id.green);
-
 			
 			red = Integer.parseInt(redInput.getText().toString());
 			blue = Integer.parseInt(blueInput.getText().toString());
 			green = Integer.parseInt(greenInput.getText().toString());
 			
 			
-			if(red > 255 || blue > 255 || green > 255){
+			if(red > 255|| blue > 255 || green > 255){
 				Toast.makeText(ColorDisplay.this, "The primary colors must have a value between 1-255",	Toast.LENGTH_SHORT).show();
 			}
 
 			else{
-			TextView color = (TextView) findViewById(R.id.background);
-			color.setBackgroundColor(Color.rgb(red, green, blue));
+			//TextView color = (TextView) findViewById(R.id.background);
+			background.setBackgroundColor(Color.rgb(red, green, blue));
 			}
 		}
         	}
@@ -80,8 +80,17 @@ public class ColorDisplay extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-    	super.onSaveInstanceState(savedInstanceState);
-    }
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+	  super.onSaveInstanceState(savedInstanceState);
+	  // Save state to the savedInstanceState
+	  savedInstanceState.putInt("Color", color);
+	}
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState) {
+	  super.onRestoreInstanceState(savedInstanceState);
+	  // Restore state from savedInstanceState
+	  int myString = savedInstanceState.getInt("Color");
+ 	  background.setBackgroundColor(myString);
+	}
 }

@@ -1,0 +1,104 @@
+package dv106.weather;
+
+import java.util.List;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class VaxjoWeatherAdapter extends ArrayAdapter {
+	private final Context context;
+	private final List<WeatherForecast> values;
+	
+	
+	public VaxjoWeatherAdapter(Context context, List<WeatherForecast> list) {
+		super(context, R.layout.weatheradapterview, list);
+		this.context = context;
+		this.values = list;
+	}
+ 
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		LayoutInflater inflater = (LayoutInflater) context
+			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		//Get all the TextViews in weatheradapterview
+		View view = inflater.inflate(R.layout.weatheradapterview, parent, false);
+		TextView textView = (TextView) view.findViewById(R.id.weather);
+		TextView rain = (TextView) view.findViewById(R.id.rain);
+		TextView endDate = (TextView) view.findViewById(R.id.endDate);
+		TextView temperature = (TextView) view.findViewById(R.id.temperature);
+		TextView wind = (TextView) view.findViewById(R.id.wind);
+		TextView startDate = (TextView) view.findViewById(R.id.startDate);
+		ImageView image = (ImageView) view.findViewById(R.id.weatherImage);
+		
+		//Set the values of the TextViews
+		WeatherForecast weatherForecast = values.get(position);
+		//Name of the weather
+		textView.setText(weatherForecast.getWeatherName());
+		//Date
+		textViewDate.setText("Fra: " + weatherForecast.getStartYYMMDD() + " " + weatherForecast.getStartHHMM());
+		textViewStopDate.setText("Til: " + weatherForecast.getEndYYMMDD() + " " + weatherForecast.getEndHHMM());
+		//Temperature
+		textViewDegree.setText(String.valueOf(weatherForecast.getTemp() + "°C"));
+		//Rain
+		rain.setText(String.valueOf("Regn: " + weatherForecast.getRain() + "mm"));
+		//Wind
+		textViewWind.setText(String.valueOf("Vind: " + weatherForecast.getWindSpeed() + "m/s"));		
+		
+		// Here should the different pictures be shown i some way 
+		switch (weatherForecast.getWeatherCode()) {
+	        case 1:
+				image.setImageResource(R.drawable.icon);
+				break;
+		    case 2:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 3:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 4:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 5:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 6:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 7:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 8:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 9:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 10:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 11:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 12:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 13:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 14:
+		    	image.setImageResource(R.drawable.icon);
+				break;
+		    case 15:
+		    	image.setImageResource(R.drawable.icon);
+	            break;
+		}
+ 
+		return view;
+	}
+}

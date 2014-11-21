@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".VAXJOWEATHER" >
+
+	<ImageView
+        android:id="@+id/logo"
+        android:src="@drawable/icon"
+        android:layout_width="100sp"
+        android:layout_height="100sp">
+         
+    </ImageView>
+
+    <TextView
+        android:id="@+id/label"
+        android:textSize="30sp"
+        android:layout_toRightOf="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/label"
+         />
+
+    <TextView
+        android:id="@+id/labelDate"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@+id/labelDate" 
+        
+        />
+
+    <TextView
+        android:id="@+id/labelDegrees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelRain"
+        android:text="@+id/labelDegrees" />
+
+    <TextView
+        android:id="@+id/labelRain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_below="@+id/labelStopdate"
+        android:text="@+id/labelRain" />
+
+    <TextView
+        android:id="@+id/labelWind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/labelRain"
+        android:text="@+id/labelWind" />
+
+    <TextView
+        android:id="@+id/labelStopdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/labelDate"
+        android:layout_below="@+id/label"
+        android:text="@+id/labelStopdate" />
+
+</RelativeLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".VAXJOWEATHER" >
+
+	<ImageView
+        android:id="@+id/weatherImage"
+        android:src="@drawable/icon"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:contentDescription="@string/weather">
+         
+    </ImageView>
+
+    <TextView
+        android:id="@+id/weather"
+        android:textSize="30sp"
+        android:layout_toRightOf="@+id/weatherImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+         />
+
+    <TextView
+        android:id="@+id/startDate"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/weatherImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" 
+        
+        />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:textSize="30sp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherImage"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/rain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/startDate"
+        android:layout_below="@+id/labelStopdate"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/startDate"
+        android:layout_below="@+id/labelRain"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/labelStopdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/startDate"
+        android:layout_below="@+id/startDate"
+        android:text="" />
+
+</RelativeLayout>
