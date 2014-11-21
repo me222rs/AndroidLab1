@@ -3183,3 +3183,35 @@ Java Model Exception: Java Model Status [dv106.weather [in src/dv106/weather [in
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2014-11-20 15:53:41.666
 !MESSAGE dv106.weather [in src/dv106/weather [in VaxjoWeather]] does not exist
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-11-21 12:35:16.534
+!MESSAGE Failed to load properties file for project 'AllApplications'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-11-21 12:39:47.956
+!MESSAGE 
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk 'C:\Users\Mikael\Documents\GitHub\AndroidLab1\AllApplications\proguard-project.txt'.
+	at org.eclipse.core.internal.resources.File.create(File.java:145)
+	at org.eclipse.core.internal.resources.File.create(File.java:187)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.addLocalFile(NewProjectCreator.java:1368)
+	at com.android.ide.eclipse.adt.internal.wizards.templates.NewProjectWizard$2.populate(NewProjectWizard.java:310)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.createEclipseProject(NewProjectCreator.java:759)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.access$1(NewProjectCreator.java:712)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator$5.run(NewProjectCreator.java:914)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+	at com.android.ide.eclipse.adt.internal.wizards.newproject.NewProjectCreator.create(NewProjectCreator.java:933)
+	at com.android.ide.eclipse.adt.internal.wizards.templates.NewProjectWizard.performFinish(NewProjectWizard.java:359)
+	at com.android.ide.eclipse.adt.internal.wizards.templates.TemplateWizard$1.run(TemplateWizard.java:201)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2014-11-21 12:39:47.956
+!MESSAGE A resource already exists on disk 'C:\Users\Mikael\Documents\GitHub\AndroidLab1\AllApplications\proguard-project.txt'.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-11-21 12:39:48.152
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-11-21 12:39:48.153
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_vertical_margin
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-11-21 12:39:48.156
+!MESSAGE Warning: Ignoring name conflict in resource file for name activity_horizontal_margin
