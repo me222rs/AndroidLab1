@@ -15,6 +15,8 @@ import android.view.View;
 
 public class RandomActivity extends Activity {
 
+	private int randomInt;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +42,7 @@ public class RandomActivity extends Activity {
 			public void onClick(View view) {
 				
 				Random r = new Random();
-				int randomInt = r.nextInt(100) + 1;
+				randomInt = r.nextInt(100) + 1;
 				//String strI = Integer.toString(randomInt);
 				
 				TextView t = (TextView)findViewById(R.id.randomText);
@@ -65,4 +67,18 @@ public class RandomActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+	  super.onSaveInstanceState(savedInstanceState);
+	  // Save state to the savedInstanceState
+	  savedInstanceState.putInt("randomInt", randomInt);
+	}
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState) {
+	  super.onRestoreInstanceState(savedInstanceState);
+	  // Restore state from savedInstanceState
+	  int myString = savedInstanceState.getInt("randomInt");
+ 	  randomInt = myString;
+	}
 }

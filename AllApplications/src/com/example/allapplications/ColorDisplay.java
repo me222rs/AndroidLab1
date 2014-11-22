@@ -36,6 +36,9 @@ public class ColorDisplay extends Activity {
         displayColor.setOnClickListener(new OnClickListener() {
         	public void onClick(View view) {
 		if(view == displayColor){
+			
+			try{
+			
 			EditText redInput = (EditText) findViewById(R.id.red);
 			EditText blueInput = (EditText) findViewById(R.id.blue);
 			EditText greenInput = (EditText) findViewById(R.id.green);
@@ -53,6 +56,9 @@ public class ColorDisplay extends Activity {
 			else{
 			//TextView color = (TextView) findViewById(R.id.background);
 			background.setBackgroundColor(color);
+			}
+			}catch(NumberFormatException e){
+				
 			}
 		}
         	}

@@ -12,8 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class VaxjoWeatherAdapter extends ArrayAdapter {
-	private final Context context;
-	private final List<WeatherForecast> values;
+	private List<WeatherForecast> values;
+	private Context context;
+	
 	
 	
 	public VaxjoWeatherAdapter(Context context, List<WeatherForecast> list) {
@@ -21,7 +22,7 @@ public class VaxjoWeatherAdapter extends ArrayAdapter {
 		this.context = context;
 		this.values = list;
 	}
- 
+	
 	//http://stackoverflow.com/questions/10120119/how-does-the-getview-method-work-when-creating-your-own-custom-adapter
 	//http://stackoverflow.com/questions/25381435/unconditional-layout-inflation-from-view-adapter-should-use-view-holder-patter
 	@Override
@@ -52,7 +53,10 @@ public class VaxjoWeatherAdapter extends ArrayAdapter {
 		//Wind
 		wind.setText(String.valueOf("Vind: " + weatherForecast.getWindSpeed() + "m/s"));		
 		
-		// Here should the different pictures be shown i some way 
+		// Here should the different pictures be shown i some way
+		//I used only the most common weathers (image 1-15 on the web page)
+		//I put them in the same order as they were on the web page in the switch statement and it seems they show the right weather
+		
 		switch (weatherForecast.getWeatherCode()) {
 	        case 1:
 				image.setImageResource(R.drawable.img1);
