@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.allapplications.ColorDisplay" >
+    tools:context="com.example.colordisplayer.ColorDisplay" >
 
 
    	<LinearLayout
@@ -20,48 +20,43 @@
 	        android:labelFor="@+id/red"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/red" />
+	        android:text="red" />
 	    
 	    <EditText android:id="@+id/red" 
 	        android:inputType="number"
-	        android:maxLength="3"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:hint="@string/zero" />
+			android:hint="0" />
 	    
 		     <TextView android:id="@+id/greenLabel" 
 		        android:labelFor="@+id/green"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="@string/green" />
+		        android:text="green" />
 		    
-		    	<EditText android:id="@+id/green" 
-		        	android:inputType="number"
-		        	android:maxLength="3"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:hint="@string/zero" />
+		    <EditText android:id="@+id/green" 
+		        android:inputType="number"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:hint="0" />
 	    
 	    
 			    <TextView android:id="@+id/blueLabel" 
 			        android:labelFor="@+id/blue"
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-			        android:text="@string/blue" />
+			        android:text="blue" />
 			    
-			    <EditText 
-			        android:id="@+id/blue" 
+			    <EditText android:id="@+id/blue" 
 			        android:inputType="number"
-			        android:maxLength="3"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:hint="@string/zero" />
+					android:hint="0" />
 			    
-				<Button 
-					android:id="@+id/displayColor"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/displayColor" />
+					<Button android:id="@+id/displayColor"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="Display" />
     </LinearLayout>
 
 
@@ -71,6 +66,7 @@
         android:layout_weight="1"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+		android:background="#000"
         android:gravity="center"/>
 
                         

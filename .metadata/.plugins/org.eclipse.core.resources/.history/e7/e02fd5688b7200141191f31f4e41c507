@@ -59,7 +59,7 @@ public class BmiActivity extends Activity {
 					int weigth = Integer.parseInt(inWeigth.getText().toString());
 					int height = Integer.parseInt(inHeight.getText().toString());
 					
-
+					
 						bmi = calc.convert(weigth, height);
 					
 					
@@ -116,9 +116,10 @@ public class BmiActivity extends Activity {
     
 	@Override
 	public void onSaveInstanceState(Bundle savedInstanceState) {
-	  super.onSaveInstanceState(savedInstanceState);
+	  
 	  // Save state to the savedInstanceState
 	  savedInstanceState.putFloat("bmi", bmi);
+	  super.onSaveInstanceState(savedInstanceState);
 	}
 	@Override
 	public void onRestoreInstanceState(Bundle savedInstanceState) {

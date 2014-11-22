@@ -59,7 +59,7 @@ public class BmiActivity extends Activity {
 					int weigth = Integer.parseInt(inWeigth.getText().toString());
 					int height = Integer.parseInt(inHeight.getText().toString());
 					
-
+					
 						bmi = calc.convert(weigth, height);
 					
 					

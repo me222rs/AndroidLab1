@@ -52,7 +52,13 @@
 		android:layout_height="wrap_content" 
 		android:hint="@string/green"/>
 </LinearLayout>
-
+		<TextView
+    	android:id="@+id/errorMessage"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text=""/>
 
         <Button 
         android:id="@+id/displayColor"   
