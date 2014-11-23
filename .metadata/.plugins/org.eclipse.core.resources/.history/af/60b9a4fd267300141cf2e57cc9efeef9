@@ -80,6 +80,6 @@ public class RandomActivity extends Activity {
 	  super.onRestoreInstanceState(savedInstanceState);
 	  // Restore state from savedInstanceState
 	  int myString = savedInstanceState.getInt("randomInt");
-	  t.setText(myString);
+ 	  randomInt = myString;
 	}
 }
